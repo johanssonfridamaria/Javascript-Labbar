@@ -17,7 +17,11 @@ console.log(family.sort());
 
 console.log(family.indexOf('Klara'));
 
-family.pop();
+// family.pop();
+// console.log(family);
+
+const index= family.indexOf('Klara');
+console.log(family.splice(index,1));
 console.log(family);
 
 for (i=0; i<family.length;i++){
