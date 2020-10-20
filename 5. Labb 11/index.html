@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labb 11</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
+
 <body>
-    <div class="container">
-        <h1>Idag är det:</h1>
-        <h2 id="date"></h2>
-        <h1> Klockan är:</h1>
-        <h2 id="time"></h2>
+    <div class="main container d-flex">
+        <div class="container">
+            <h1></h1>
+        </div>
+        <div class="container time-box">
+            <h1><i class="fas fa-calendar-day"></i>Today it is:</h1>
+            <h2 id="date"></h2>
+        </div>
+        <div class="time-box container">
+            <h1><i class="far fa-clock"></i>The time is:</h1>
+                <h2 id="time"></h2>
+        </div>
     </div>
-
-
-
     <script src="script.js"></script>
 </body>
+
 </html>
