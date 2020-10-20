@@ -23,7 +23,7 @@ let morningOrNigth = function(){
     else if (dateToday.getHours()>12 && dateToday.getHours()<16){
         document.querySelector('body > div > div:nth-child(1) > h1').textContent='Good afternoon!';
     }
-    else if (dateToday.getHours()>18 && dateToday.getHours()<22){
+    else if (dateToday.getHours()>16 && dateToday.getHours()<22){
         document.querySelector('body > div > div:nth-child(1) > h1').textContent='Good evening!';
     }
     else
