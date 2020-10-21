@@ -1,0 +1,27 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: indianred;
+}
+
+.container{
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.d-none{
+    display:none;
+}
