@@ -62,7 +62,7 @@ body {
     font-size: 1rem;
     opacity: 0.5;
 }
-.nav-item:active{
+.nav-item:hover{
     opacity: 1;
 }
 
