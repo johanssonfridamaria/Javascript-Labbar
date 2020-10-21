@@ -32,7 +32,7 @@ body{
     align-items: center;
 }
 
-.navbar-nav{
+.d-none{
     display: none;
 }
 
@@ -48,8 +48,12 @@ body{
     outline:0;
 }
 
-@media (minwidth:768){
+@media (min-width:768px){
+    .toggler{
+        display: none;
+    }
+    
     .navbar-nav{
-        display: ;
+        
     }
 }
