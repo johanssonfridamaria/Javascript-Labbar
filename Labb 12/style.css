@@ -15,11 +15,12 @@ body {
 }
 
 .container {
-    padding: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
 }
 
-.d-flex {
-    display: flex;
+.d-block {
+    display: block;
 }
 
 .d-none {
@@ -28,8 +29,32 @@ body {
 
 .navbar {
     background-color: darkblue;
-    justify-content: space-between;
-    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+    display: block;
+}
+
+.navbar-nav
+{
+    position: absolute;
+    z-index: 1;
+    background-color: darkblue;
+    width: 100%;
+    left:0;
+}
+
+.nav-item{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    opacity: 0.5;
+    padding-bottom: 0.5rem;
+    display: block;
+
+}
+.nav-item:hover{
+    opacity: 1;
 }
 
 .d-none {
