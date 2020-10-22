@@ -50,6 +50,7 @@ body {
 }
 
 .navbar-nav {
+    display: inline-block;
     position: absolute;
     right: 0;
     top: 50%;
@@ -86,18 +87,23 @@ body {
 
 @media (max-width:768px) {
     .toggler {
-        display: block;
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
     }
+
     .navbar-nav {
-        display: none;
         position: absolute;
         z-index: 1;
         background-color: darkblue;
-        width: 100%;
-        left: 0;
-    }
+        min-width: 768px;
+        right: -2rem;
+        top: 350%;
+        }
+
     .nav-item {
-        /* float: right; */
         text-decoration: none;
         color: #fff;
         font-size: 1rem;
