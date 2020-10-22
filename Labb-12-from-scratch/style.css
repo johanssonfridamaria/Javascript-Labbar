@@ -56,6 +56,13 @@ html, body{
         display: flex;
     }
 
+    .hide{
+        display: none;
+    }
+    .show{
+        display: flex;
+    }
+
     .navbar-nav{
         flex-direction: column;
         order:3;
