@@ -59,9 +59,6 @@ html, body{
     .hide{
         display: none;
     }
-    .show{
-        display: flex;
-    }
 
     .navbar-nav{
         flex-direction: column;
