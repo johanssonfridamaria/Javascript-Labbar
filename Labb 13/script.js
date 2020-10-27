@@ -6,8 +6,6 @@ const firstName = document.querySelector('#firstName');
 const lastName = document.querySelector('#lastName');
 const dateOfBirth = document.querySelector('#dateOfBirth');
 
-
-
 const validate = function (id) {
     const input = document.querySelector(id);
     const error = document.querySelector(id + '-error');
@@ -65,6 +63,32 @@ const validateSelect = function (gender) {
     }
 }
 
+const validateDateOfBirth = function (dateOfBirth) {
+    const dateOfBirthError = document.querySelector('#dateOfBirth-error');
+    let dateToday = new Date();
+    // let dateInput=new Date(dateOfBirth.value);
+    
+    if (dateOfBirth.value === ''|| dateOfBirth.value > dateToday) {
+        dateOfBirthError.textContent = 'Pls enter a valid input.';
+        dateOfBirthError.classList.add('text-danger');
+        dateOfBirth.classList.add('border-danger');
+        dateOfBirth.focus();
+        return false
+
+    } else if (!/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/.test(dateOfBirth.value)){
+        dateOfBirthError.textContent = 'Pls enter all fields.';
+        dateOfBirthError.classList.add('text-danger');
+        dateOfBirth.classList.add('border-danger');
+        dateOfBirth.focus();
+        return false
+    }
+    else {
+        dateOfBirthError.textContent = '';
+        dateOfBirth.classList.remove('border-danger');
+        return true
+    }
+}
+
 const validateTerms = function (check) {
     const termsError = document.querySelector('#check-error');
     if (!check.checked) {
@@ -80,21 +104,21 @@ const validateTerms = function (check) {
 
 memberForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    if (validate('#firstName') && validate('#lastName') && validateEmail(email) && validateSelect(gender) && validate('#dateOfBirth') && validateTerms(check)){
-    console.log('Form success!');
+    if (validate('#firstName') && validate('#lastName') && validateEmail(email) && validateSelect(gender) && validateDateOfBirth(dateOfBirth) && validateTerms(check)) {
+        console.log('Form success!');
 
-    let member ={
-        firstName: firstName.value,
-        lastName: lastName.value,
-        email: email.value,
-        gender: gender.value,
-        dateOfBirth: dateOfBirth.value
+        let member = {
+            firstName: firstName.value,
+            lastName: lastName.value,
+            email: email.value,
+            gender: gender.value,
+            dateOfBirth: dateOfBirth.value
+        }
+
+        console.log(member);
+        memberForm.reset();
     }
-
-    console.log(member);
-    memberForm.reset();
-}
-else{
-    console.log('Form failed');
-}
+    else {
+        console.log('Form failed');
+    }
 })
