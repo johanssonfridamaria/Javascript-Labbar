@@ -11,16 +11,19 @@ const validate = function (id) {
         error.classList.add('text-danger');
         input.classList.add('border-danger');
         input.focus();
+        return false
     }
     else if (input.value.length < 2) {
         error.textContent = 'Please enter more than 2 characters';
         error.classList.add('text-danger');
         input.classList.add('border-danger');
         input.focus();
+        return false
     }
     else {
         error.textContent = '';
         input.classList.remove('border-danger');
+        return true
     }
 }
 
@@ -31,10 +34,12 @@ const validateEmail = function (email) {
         emailError.classList.add('text-danger');
         email.classList.add('border-danger');
         email.focus();
+        return false
     }
     else{
         emailError.textContent ='';
         email.classList.remove('border-danger');
+        return true
     }
 
 }
@@ -46,10 +51,12 @@ const validateSelect = function(gender){
         genderError.classList.add('text-danger');
         gender.classList.add('border-danger');
         gender.focus();
+        return false
     }
     else{
         genderError.textContent = '';
         gender.classList.remove('border-danger');
+        return true
     }
 }
 
@@ -58,9 +65,11 @@ const validateTerms = function(check){
     if(!check.checked){
         termsError.textContent ='You must accept the terms of use.';
         termsError.classList.add('text-danger');
+        return false
     }
     else{
         termsError.textContent ='';
+        return true
     }
 }
 
