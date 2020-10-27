@@ -1,7 +1,7 @@
 const memberForm = document.querySelector('#memberForm');
 const email = document.querySelector('#email');
 const gender = document.querySelector('#gender');
-const check= document.querySelector('#check');
+const check = document.querySelector('#check');
 
 const validate = function (id) {
     const input = document.querySelector(id);
@@ -36,49 +36,49 @@ const validateEmail = function (email) {
         email.focus();
         return false
     }
-    else{
-        emailError.textContent ='';
+    else {
+        emailError.textContent = '';
         email.classList.remove('border-danger');
         return true
     }
 
 }
 
-const validateSelect = function(gender){
+const validateSelect = function (gender) {
     const genderError = document.querySelector('#gender-error');
-    if(gender.value === 'Select'){
+    if (gender.value === 'Select') {
         genderError.textContent = 'Please select gender';
         genderError.classList.add('text-danger');
         gender.classList.add('border-danger');
         gender.focus();
         return false
     }
-    else{
+    else {
         genderError.textContent = '';
         gender.classList.remove('border-danger');
         return true
     }
 }
 
-const validateTerms = function(check){
-    const termsError= document.querySelector('#check-error');
-    if(!check.checked){
-        termsError.textContent ='You must accept the terms of use.';
+const validateTerms = function (check) {
+    const termsError = document.querySelector('#check-error');
+    if (!check.checked) {
+        termsError.textContent = 'You must accept the terms of use.';
         termsError.classList.add('text-danger');
         return false
     }
-    else{
-        termsError.textContent ='';
+    else {
+        termsError.textContent = '';
         return true
     }
 }
 
 memberForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    validate('#firstName');
-    validate('#lastName');
-    validateEmail(email);
-    validateSelect(gender);
-    validate('#dateOfBirth');
-    validateTerms(check);
+    if (validate('#firstName') && validate('#lastName') && validateEmail(email) && validateSelect(gender) && validate('#dateOfBirth') && validateTerms(check)){
+    console.log('Form success!');
+}
+else{
+    console.log('Form failed');
+}
 })
