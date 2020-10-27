@@ -1,6 +1,7 @@
 const memberForm = document.querySelector('#memberForm');
 const email = document.querySelector('#email');
 const gender = document.querySelector('#gender');
+const check= document.querySelector('#check');
 
 const validate = function (id) {
     const input = document.querySelector(id);
@@ -52,9 +53,9 @@ const validateSelect = function(gender){
     }
 }
 
-const validateTerms = function(){
+const validateTerms = function(check){
     const termsError= document.querySelector('#check-error');
-    if(!e.currentTarget['check'].checked){
+    if(!check.value === checked){
         termsError.textContent ='You must accept the terms of use.'
         termsError.classList.add('text-danger')
     }
@@ -67,5 +68,5 @@ memberForm.addEventListener('submit', function (e) {
     validate('#lastName');
     validateEmail(email);
     validateSelect(gender);
-    validateTerms();
+    validateTerms(check);
 })
