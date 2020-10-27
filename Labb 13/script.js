@@ -5,4 +5,8 @@ const email=document.querySelector('#email');
 const gender=document.querySelector('#gender');
 const dateOfBirth=document.querySelector('#dateOfBirth');
 const check=document.querySelector('#check');
-const submitBtn=document.querySelector('#submit')
+const btn=document.querySelector('#submit')
+
+btn.addEventListener('submit', function(){
+    
+})
