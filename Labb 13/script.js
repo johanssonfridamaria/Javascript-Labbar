@@ -2,6 +2,11 @@ const memberForm = document.querySelector('#memberForm');
 const email = document.querySelector('#email');
 const gender = document.querySelector('#gender');
 const check = document.querySelector('#check');
+const firstName = document.querySelector('#firstName');
+const lastName = document.querySelector('#lastName');
+const dateOfBirth = document.querySelector('#dateOfBirth');
+
+
 
 const validate = function (id) {
     const input = document.querySelector(id);
@@ -77,6 +82,17 @@ memberForm.addEventListener('submit', function (e) {
     e.preventDefault();
     if (validate('#firstName') && validate('#lastName') && validateEmail(email) && validateSelect(gender) && validate('#dateOfBirth') && validateTerms(check)){
     console.log('Form success!');
+
+    let member ={
+        firstName: firstName.value,
+        lastName: lastName.value,
+        email: email.value,
+        gender: gender.value,
+        dateOfBirth: dateOfBirth.value
+    }
+
+    console.log(member);
+    memberForm.reset();
 }
 else{
     console.log('Form failed');
