@@ -25,7 +25,7 @@ const validate = function (id) {
 
 const validateEmail = function (email) {
     const emailError = document.querySelector('#email-error')
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value) || email.value === '') {
         emailError.textContent = 'Please enter a valid email address';
         emailError.classList.add('text-danger');
         email.classList.add('border-danger');
@@ -39,7 +39,7 @@ const validateEmail = function (email) {
 }
 
 const validateSelect = function(gender){
-    const genderError = document.querySelector('#gender-error')
+    const genderError = document.querySelector('#gender-error');
     if(gender.value === 'Select'){
         genderError.textContent = 'Please select gender';
         genderError.classList.add('text-danger');
@@ -52,6 +52,13 @@ const validateSelect = function(gender){
     }
 }
 
+const validateTerms = function(){
+    const termsError= document.querySelector('#check-error');
+    if(!e.currentTarget['check'].checked){
+        termsError.textContent ='You must accept the terms of use.'
+        termsError.classList.add('text-danger')
+    }
+}
 
 
 memberForm.addEventListener('submit', function (e) {
@@ -60,4 +67,5 @@ memberForm.addEventListener('submit', function (e) {
     validate('#lastName');
     validateEmail(email);
     validateSelect(gender);
+    validateTerms();
 })
