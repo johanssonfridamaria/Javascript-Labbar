@@ -43,4 +43,5 @@ memberForm.addEventListener('submit', function (e) {
     e.preventDefault();
     validate('#firstName');
     validate('#lastName');
+    validateEmail(email);
 })
