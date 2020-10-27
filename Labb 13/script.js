@@ -1,5 +1,6 @@
 const memberForm = document.querySelector('#memberForm');
-const email = document.querySelector('#email')
+const email = document.querySelector('#email');
+const gender = document.querySelector('#gender');
 
 const validate = function (id) {
     const input = document.querySelector(id);
@@ -18,6 +19,7 @@ const validate = function (id) {
     }
     else {
         error.textContent = '';
+        input.classList.remove('border-danger');
     }
 }
 
@@ -31,11 +33,24 @@ const validateEmail = function (email) {
     }
     else{
         emailError.textContent ='';
+        email.classList.remove('border-danger');
     }
 
 }
 
-
+const validateSelect = function(gender){
+    const genderError = document.querySelector('#gender-error')
+    if(gender.value === 'Select'){
+        genderError.textContent = 'Please select gender';
+        genderError.classList.add('text-danger');
+        gender.classList.add('border-danger');
+        gender.focus();
+    }
+    else{
+        genderError.textContent = '';
+        gender.classList.remove('border-danger');
+    }
+}
 
 
 
@@ -44,4 +59,5 @@ memberForm.addEventListener('submit', function (e) {
     validate('#firstName');
     validate('#lastName');
     validateEmail(email);
+    validateSelect(gender);
 })
