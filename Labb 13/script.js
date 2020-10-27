@@ -66,9 +66,9 @@ const validateSelect = function (gender) {
 const validateDateOfBirth = function (dateOfBirth) {
     const dateOfBirthError = document.querySelector('#dateOfBirth-error');
     let dateToday = new Date();
-    // let dateInput=new Date(dateOfBirth.value);
+    let dateInput=new Date(dateOfBirth.value);
     
-    if (dateOfBirth.value === ''|| dateOfBirth.value > dateToday) {
+    if (dateOfBirth.value === ''|| dateInput > dateToday) {
         dateOfBirthError.textContent = 'Pls enter a valid input.';
         dateOfBirthError.classList.add('text-danger');
         dateOfBirth.classList.add('border-danger');
