@@ -55,9 +55,12 @@ const validateSelect = function(gender){
 
 const validateTerms = function(check){
     const termsError= document.querySelector('#check-error');
-    if(!check.value === checked){
-        termsError.textContent ='You must accept the terms of use.'
-        termsError.classList.add('text-danger')
+    if(!check.checked){
+        termsError.textContent ='You must accept the terms of use.';
+        termsError.classList.add('text-danger');
+    }
+    else{
+        termsError.textContent ='';
     }
 }
 
