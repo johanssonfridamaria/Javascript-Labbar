@@ -34,7 +34,7 @@ const validate = function (id) {
 
 const validateEmail = function (email) {
     const emailError = document.querySelector('#email-error')
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value) || email.value === '') {
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value) || email.value === '') {
         emailError.textContent = 'Please enter a valid email address';
         emailError.classList.add('text-danger');
         email.classList.add('border-danger');
