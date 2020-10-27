@@ -64,12 +64,12 @@ const validateTerms = function(check){
     }
 }
 
-
 memberForm.addEventListener('submit', function (e) {
     e.preventDefault();
     validate('#firstName');
     validate('#lastName');
     validateEmail(email);
     validateSelect(gender);
+    validate('#dateOfBirth');
     validateTerms(check);
 })
